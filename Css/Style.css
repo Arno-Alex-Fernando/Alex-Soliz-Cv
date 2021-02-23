@@ -1,0 +1,541 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+img {
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*Globali*/
+
+.text-gradient {
+    background: #F7FCEB;
+    background: -webkit-linear-gradient(to right, #F7FCEB 0%, #D2D4D2 100%);
+    background: -moz-linear-gradient(to right, #F7FCEB 0%, #D2D4D2 100%);
+    background: linear-gradient(to right, #F7FCEB 0%, #D2D4D2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    flex-direction: column;
+    text-align: center;
+}
+
+
+/*Inizio Header*/
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+label {
+    display: none;
+}
+
+.container_nav {
+    width: 100%;
+    height: 80px;
+}
+
+.nav {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
+    transition: width 0.5s ease-in;
+}
+
+.nav a {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav>a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 0px;
+    height: 3px;
+    border-radius: 5px;
+    background: rgb(250, 250, 250);
+}
+
+.nav a:hover::after {
+    animation: ButtonBorder 0.5s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes ButtonBorder {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.Site_Header {
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    font-style: italic;
+}
+
+.Site_Header .text {
+    justify-content: flex-start;
+    width: 50%;
+    padding: 50px;
+}
+
+.text>div>h1 {
+    font-size: 2.5em;
+}
+
+.text>div>h2 {
+    font-size: 2.0em;
+}
+
+.text>div>p {
+    margin-top: 15px;
+    font-size: 1.3em;
+}
+
+.Photo {
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.Photo>i {
+    position: absolute;
+    font-size: 2em;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #CFCFCF;
+    background: -webkit-linear-gradient(to right, #CFCFCF 0%, #847C8A 100%);
+    background: -moz-linear-gradient(to right, #CFCFCF 0%, #847C8A 100%);
+    background: linear-gradient(to right, #CFCFCF 0%, #847C8A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Photo>i:nth-child(1) {
+    animation: arrow_anime 1.5s linear;
+    animation-iteration-count: 4;
+}
+
+.Photo>i:nth-child(2) {
+    animation: arrow_anime 1.5s linear;
+    animation-iteration-count: 4;
+    animation-delay: 0.75s;
+}
+
+@keyframes arrow_anime {
+    0% {
+        transform: translateX(30px);
+    }
+    25% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-30px);
+    }
+    75% {
+        transform: translateX(-60px);
+    }
+    100% {
+        transform: translateX(-90px);
+    }
+}
+
+.Photo>div {
+    width: 68%;
+    height: 70%;
+    -webkit-clip-path: circle(54%);
+}
+
+.Photo>div>div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.Photo>div:hover>div {
+    transform: rotateY(180deg);
+}
+
+.card-back p {
+    margin-top: 15px;
+}
+
+.card-back p:first-child {
+    margin-top: 0;
+}
+
+.Photo>div img {
+    border-radius: 50%;
+    height: 100%;
+}
+
+
+/*Fine Header*/
+
+
+/*Inizio Main*/
+
+.contenitore_principale {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.contenitore_principale section {
+    margin-bottom: 70px;
+}
+
+.contenitore_principale section>h1 {
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-style: italic;
+    color: rgb(255, 255, 255);
+}
+
+.contenitore_principale section .arrow {
+    position: relative;
+    text-align: center;
+    color: orange;
+    font-size: 2em;
+    letter-spacing: 10px;
+    top: -10px;
+}
+
+.competenze {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.elenco_competenze {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 330px;
+    height: 450px;
+    background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 0px 19px -5px #000000;
+    box-shadow: 0px 0px 19px -5px #000000;
+}
+
+.card>div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #DCD9D4;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), radial-gradient(at 50% 0%, rgba(255, 255, 255, 0.10) 0%, rgba(0, 0, 0, 0.50) 50%);
+    background-blend-mode: soft-light, screen;
+    border-radius: 12px;
+    transition: transform 0.6s;
+    -webkit-transform-style: preserve-3d;
+}
+
+.card:hover>div {
+    transform: rotateY(180deg);
+}
+
+.elenco_competenze .card-front,
+.elenco_competenze .card-back {
+    padding: 20px;
+}
+
+.card-front>.img-p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card-back h2 {
+    font-size: 2.6em;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.text-info {
+    position: relative;
+    top: 10%;
+}
+
+.text-info p:nth-child(1) {
+    margin-bottom: 5px;
+}
+
+.scuola {
+    display: flex;
+    margin-top: 40px;
+}
+
+.Itis-text {
+    width: 50%;
+    flex-direction: column;
+}
+
+.Itis-text p {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+.itis-card {
+    width: 50%;
+    height: 320px;
+    position: relative;
+}
+
+.itis-card:hover>div {
+    transform: rotateY(180deg);
+}
+
+.itis-card>div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.itis-card .card-front {
+    padding: 0;
+}
+
+.itis-card .card-front>img {
+    height: 100%;
+}
+
+.itis-card .card-back a {
+    color: white;
+    font-size: 1.2em;
+}
+
+.lavori>div {
+    padding: 30px;
+    padding-top: 0;
+}
+
+.lavori .c-w {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lavori div h3 {
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.lavori div p {
+    margin-top: 12px;
+    font-size: 1.2em;
+    color: black;
+    font-style: italic;
+    font-weight: 500;
+}
+
+footer>p {
+    text-align: center;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1250px) {
+    .Photo>div {
+        width: 70%;
+        height: 60%;
+    }
+}
+
+@media (max-width: 1050px) {
+    header .nav {
+        width: 100%;
+    }
+    .Site_Header {
+        display: block;
+    }
+    .Site_Header .text {
+        width: 100%;
+        padding-top: 10px;
+    }
+    .Photo {
+        width: 100%;
+    }
+    .Photo>div {
+        width: 70%;
+        height: 90%;
+    }
+    .card {
+        width: 300px;
+        margin: 15px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 750px) {
+    .text>div>h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+    .text>div>h2 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .text>div>p {
+        font-size: 1em;
+        text-align: center;
+    }
+    .Photo>div {
+        width: 75%;
+        height: 65%;
+    }
+    .container_nav div {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        z-index: 1000;
+        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    }
+    .checkbtn {
+        display: inline;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+    .nav {
+        position: fixed;
+        top: -100%;
+        left: 0%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        z-index: 100;
+        flex-direction: column;
+        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+        transition: 0.5s linear;
+    }
+    .move {
+        top: 80px
+    }
+    .Photo>div {
+        width: 65%;
+        height: 85%;
+    }
+}
+
+@media (max-width: 540px) {
+    .Site_Header .text {
+        padding: 15px;
+    }
+    .text>div>h1 {
+        font-size: 1.3em;
+        text-align: center;
+    }
+    .text>div>h2 {
+        font-size: 1em;
+        text-align: center;
+    }
+    .text>div>p {
+        font-size: 0.9em;
+        text-align: center;
+    }
+    .Photo>div {
+        width: 80%;
+        height: 70%;
+    }
+    .card {
+        margin: 10px;
+    }
+    .scuola {
+        display: block;
+        margin-top: 10px;
+    }
+    .Itis-text {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+        padding: 5px;
+    }
+    .itis-card {
+        width: 100%;
+        height: 190px;
+    }
+    .Itis-text p {
+        font-size: 1em;
+    }
+    .lavori .c-w {
+        flex-direction: column;
+    }
+    .lavori div p {
+        text-align: justify;
+    }
+}
